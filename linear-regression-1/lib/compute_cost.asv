@@ -1,0 +1,8 @@
+function cost = compute_cost(H, Y, m) 
+    % H hypothesis matrix
+    % Y goal 
+    % m training examples
+    matrix_sub = H - Y;
+    sum = sum(matrix_sub);
+    cost = 1/2.
+end

@@ -1,0 +1,54 @@
+disp("Initilizing the best Linear Regression Program v1.0\n");
+
+% clear and initialize 
+clear; clc; close all; 
+
+sprintf("Initilizing paths...\n");
+
+% add paths
+addpath('./lib');
+
+sprintf("Loading data files...\n");
+
+% load data file
+file = load("data/data1.txt");
+X = file(:,1);
+Y = file(:,2);
+m = length(Y); % training examples count
+
+sprintf("Plotting the data...\n");
+
+% plot the data
+% plot_data(X,Y)
+
+X2 = [1;1;2;3;3];
+Y2 = [0.5;1.5;2;1.5;3];
+H2 = [1;1;2;3;3];
+cost = compute_cost(H2,Y2,5);
+
+theta0 = [0;0;0;0;0];
+theta1 = 1;
+derivatives = compute_derivatives(X2, Y2, theta0, theta1, 5);
+
+learn_rate = 0.001;
+
+% gradient_data = gradient_descent(X2, Y2, theta0, theta1, learn_rate, 10)
+
+% hold on
+% plot_data(X2,Y2)
+% x = 0:5;
+% y = gradient_data(1) + gradient_data(2)*x;
+% plot(x,y)
+% hold off
+
+theta0 = ones(97, 1);
+theta1 = 1;
+gradient_data = gradient_descent(X, Y, theta0, theta1, learn_rate, 1000)
+
+hold on
+plot_data(X,Y)
+Hx = gradient_data(1) + gradient_data(2)*X;
+plot(X,Hx)
+hold off
+
+

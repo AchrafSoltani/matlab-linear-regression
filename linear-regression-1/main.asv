@@ -1,0 +1,31 @@
+disp("Initilizing the best Linear Regression Program v1.0\n");
+
+% clear and initialize 
+clear; clc; close all; 
+
+sprintf("Initilizing paths...\n");
+
+% add paths
+addpath('./lib');
+
+sprintf("Loading data files...\n");
+
+% load data file
+file = load("data/data1.txt");
+X = file(:,1);
+Y = file(:,2);
+m = length(Y); % training examples count
+
+sprintf("Plotting the data...\n");
+
+% plot the data
+% plot_data(X,Y)
+
+H = [1;1;2;3;3];
+Y = [0.5;1.5;2;1.5;3];
+cost = compute_cost(H,Y,5)
+
+theta0 = [0,0,0,0,0]
+theta1 = [1,1,1,1,1]
+derivative = compute_derivative(X, Y, theta0, theta1, m)
+

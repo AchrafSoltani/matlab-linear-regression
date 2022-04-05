@@ -1,0 +1,8 @@
+function derivative = compute_derivative(X, Y, theta0, theta1, m)
+    ttt = theta1*X
+    theta0 = zeros(size(ttt))
+    inner = theta0+ttt
+    inner2 = inner-Y
+    mat = X.*inner2;
+    derivative = (1/m)*sum(mat)
+end
