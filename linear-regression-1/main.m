@@ -30,7 +30,7 @@ theta0 = [0;0;0;0;0];
 theta1 = 1;
 derivatives = compute_derivatives(X2, Y2, theta0, theta1, 5);
 
-learn_rate = 0.001;
+learn_rate = 0.0211;
 
 % gradient_data = gradient_descent(X2, Y2, theta0, theta1, learn_rate, 10)
 
